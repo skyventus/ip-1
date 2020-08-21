@@ -27,9 +27,18 @@ public class Duke {
         command = in.nextLine();
 
         while(! command.toLowerCase().contains("bye")){
-            System.out.println(indent + line);
-            System.out.println(indent + command+"\n");
-            System.out.println(indent + line);
+            if(command.toLowerCase().equals("list")) {
+                int i = 0;
+                for(String task: tasks) {
+                    System.out.println("[" + (i + 1) + "] " + task);
+                    i++;
+                }
+            }else {
+                System.out.println(indent + line);
+                tasks.add(command);
+                System.out.println(indent + "added: " + command);
+                System.out.println(indent + line);
+            }
             command = in.nextLine().toLowerCase();
         }
 
