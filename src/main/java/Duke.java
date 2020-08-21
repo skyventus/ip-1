@@ -1,50 +1,50 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 public class Duke {
-    public static void main(String[] args) {
+
+    private Ui ui;
+    private TaskList task;
+
+    public void run(){
+        ui = new Ui();
+        task = new TaskList();
+        ui.printWelcome();
+
+        String Description;
+        int idx;
+        String fullCommand = ui.readUserCommand().toLowerCase();
         String command;
-        Scanner in = new Scanner(System.in);
-        List<String> tasks = new ArrayList<>();
-
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
-//        System.out.println("Hello from\n" + logo);
-        String line = "----------------------------------------";
-        String helloMessage = "Hello! I'm Duke";
-        String greetMsg = "What can I do for you?";
-        String byeMsg = "Bye. Hope to see you again";
-        String indent = "    ";
-        System.out.println(indent + line);
-        System.out.println(indent + helloMessage);
-        System.out.println(indent + greetMsg);
-        System.out.println(indent + line);
-
-        command = in.nextLine();
-
-        while(! command.toLowerCase().contains("bye")){
-            if(command.toLowerCase().equals("list")) {
-                int i = 0;
-                for(String task: tasks) {
-                    System.out.println("[" + (i + 1) + "] " + task);
-                    i++;
-                }
-            }else {
-                System.out.println(indent + line);
-                tasks.add(command);
-                System.out.println(indent + "added: " + command);
-                System.out.println(indent + line);
+        if(fullCommand.contains("done"))
+            command="done";
+        else
+            command=fullCommand;
+        while(!command.equals("bye")) {
+            switch(command){
+                case("list"):
+                    task.printTasks();
+                    break;
+                case("done"):
+                    idx = Integer.parseInt(fullCommand.replace("done", "").trim());
+                    Ui.printDone();
+                    task.completedTask(idx);
+                    task.printOneTask(idx);
+                    break;
+                default:
+                    if(!fullCommand.equals("")) {
+                        task.addTask(new Task(fullCommand));
+                        Ui.printAdded(fullCommand);
+                    }else{
+                        Ui.printError("Please key in your task...");
+                    }
+                    break;
             }
-            command = in.nextLine().toLowerCase();
-        }
+            fullCommand = ui.readUserCommand().toLowerCase();
+            if(fullCommand.contains("done"))
+                command="done";
+            else
+                command=fullCommand;
+        } ui.printBye();
 
-        System.out.println(indent + line);
-        System.out.println(indent + byeMsg + "\n");
-        System.out.println(indent + line);
-
+    }
+    public static void main(String[] args) {
+        new Duke().run();
     }
 }
