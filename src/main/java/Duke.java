@@ -8,26 +8,34 @@ public class Duke {
         Scanner in = new Scanner(System.in);
         List<String> tasks = new ArrayList<>();
 
-//        String logo = " ____        _        \n"
-//                + "|  _ \\ _   _| | _____ \n"
-//                + "| | | | | | | |/ / _ \\\n"
-//                + "| |_| | |_| |   <  __/\n"
-//                + "|____/ \\__,_|_|\\_\\___|\n";
-////        System.out.println("Hello from\n" + logo);
+        String logo = " ____        _        \n"
+                + "|  _ \\ _   _| | _____ \n"
+                + "| | | | | | | |/ / _ \\\n"
+                + "| |_| | |_| |   <  __/\n"
+                + "|____/ \\__,_|_|\\_\\___|\n";
+//        System.out.println("Hello from\n" + logo);
         String line = "----------------------------------------";
         String helloMessage = "Hello! I'm Duke";
         String greetMsg = "What can I do for you?";
         String byeMsg = "Bye. Hope to see you again";
+        String indent = "    ";
+        System.out.println(indent + line);
+        System.out.println(indent + helloMessage);
+        System.out.println(indent + greetMsg);
+        System.out.println(indent + line);
 
-        System.out.println(line);
-        System.out.println(helloMessage);
-        System.out.println(greetMsg);
-        System.out.println(line);
+        command = in.nextLine();
 
-        System.out.println(line);
-        System.out.println(byeMsg);
-        System.out.println(line);
+        while(! command.toLowerCase().contains("bye")){
+            System.out.println(indent + line);
+            System.out.println(indent + command+"\n");
+            System.out.println(indent + line);
+            command = in.nextLine().toLowerCase();
+        }
 
+        System.out.println(indent + line);
+        System.out.println(indent + byeMsg + "\n");
+        System.out.println(indent + line);
 
     }
 }
