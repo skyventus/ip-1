@@ -1,18 +1,11 @@
+package Duke;
+
 public class Task {
     private String description;
     private boolean isDone;
 
     public Task(String desc){
         this.description=desc;
-        this.isDone=false;
-    }
-
-    public void setDone(boolean done) {
-        isDone = done;
-    }
-
-    public boolean isDone(){
-        return this.isDone;
     }
 
     public String getDescription(){
@@ -22,4 +15,11 @@ public class Task {
     public String toString() {
         return  description;
     }
+
+    public boolean isDone(){return isDone;};
+
+    public void setDone(boolean done){
+        this.isDone = done;
+    };
+
 }
