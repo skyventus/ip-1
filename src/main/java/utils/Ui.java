@@ -13,7 +13,7 @@ public class Ui {
         in = new Scanner(System.in);
     }
     String checkedMark = "\u2713";
-    String cross = "\u2715";
+    String cross = "\u2718";
 
 
     public static void printWelcome(){

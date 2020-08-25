@@ -1,0 +1,25 @@
+    Hello! I'm Duke.Duke
+    What can I do for you?
+Your task? 
+    Got it. I've added this task:
+      [T][?] add book
+    Now you have 1 tasks in the list
+Your task? 
+    Got it. I've added this task:
+      [D][?] return book
+    Now you have 2 tasks in the list
+Your task? 
+    Got it. I've added this task:
+      [E][?] project meeting
+    Now you have 3 tasks in the list
+Your task? 
+    Got it. I've added this task:
+      [T][?] clear task
+    Now you have 4 tasks in the list
+Your task? 
+    1.[T][?] add book
+    2.[D][?] return book (by: tuesday)
+    3.[E][?] project meeting (at: 2pm-5pm)
+    4.[T][?] clear task
+Your task? 
+    Bye. Hope to see you again
