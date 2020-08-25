@@ -17,7 +17,7 @@ public class TaskList {
     public void addTask(Task task){
         tasks.add(task);
         ui.printGotIt();
-        ui.showAddedTask(Parser.getObjectType(task), task.getDescription());
+        ui.showAddedTask(Parser.getTaskType(task), task.getDescription());
         ui.showTotalNumberTaskAdded(tasks.size());
     }
 
@@ -27,13 +27,13 @@ public class TaskList {
             Ui.showToUser("No tasks has been added to the list yet.");
         int rank=1;
         for(Task task: tasks) {
-            ui.showTaskWithOrder(Parser.getObjectType(task), task.toString(),rank, task.isDone());
+            ui.showTaskWithOrder(Parser.getTaskType(task), task.toString(),rank, task.isDone());
             rank++;
         }
     }
 
-    public void completedTask(int idx){
+    public void setTaskDone(int idx){
         tasks.get(idx-1).setDone(true);
-        ui.showDoneTask(Parser.getObjectType(tasks.get(idx-1)), tasks.get(idx-1).toString());
+        ui.showDoneTask(Parser.getTaskType(tasks.get(idx-1)), tasks.get(idx-1).toString());
     }
 }
