@@ -12,7 +12,7 @@ then
     rm ACTUAL-UNIX.TXT
 fi
 
-# compile the code into the bin folder, terminates if error occurred
+# compile the code into the bin folder, terminates if error occurred (olivier)
 if ! javac -cp ../src/main/* -Xlint:none -d ../bin ../src/main/java/Duke/Duke.java
 then
     echo "********** BUILD FAILURE **********"

@@ -6,7 +6,7 @@ if not exist ..\bin mkdir ..\bin
 REM delete output from previous run
 del ACTUAL.TXT
 
-REM compile the code into the bin folder
+REM compile the code into the bin folder (Olivier)
 javac  -cp ..\src\main\* -Xlint:none -d ..\bin ..\src\main\java\Duke\Duke.java
 IF ERRORLEVEL 1 (
     echo ********** BUILD FAILURE **********
