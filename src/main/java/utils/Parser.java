@@ -1,6 +1,10 @@
 package utils;
 
-import duke.*;
+import duke.Deadline;
+import duke.DukeException;
+import duke.Event;
+import duke.Task;
+import duke.Todo;
 
 public class Parser {
 
@@ -19,9 +23,9 @@ public class Parser {
         return task[0];
     }
 
-    public static Task createTodo(String fullCommand) {
+    public static Todo createTodo(String fullCommand) {
 
-        Task task = new Todo(fullCommand.trim());
+        Todo task = new Todo(fullCommand.trim());
 
         return task;
     }
