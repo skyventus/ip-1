@@ -1,7 +1,5 @@
 package utils;
 
-import Duke.Task;
-
 import java.util.Scanner;
 
 

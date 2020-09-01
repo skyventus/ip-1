@@ -1,6 +1,6 @@
-package Duke;
+package duke;
 
-public class Event extends Task {
+public class Event extends Todo {
     private String eventInformation;
 
     public Event(String description, String event){
