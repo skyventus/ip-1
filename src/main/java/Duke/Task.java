@@ -1,6 +1,6 @@
 package Duke;
 
-public class Task {
+public abstract class Task {
     private String description;
     private boolean isDone;
 
@@ -8,6 +8,9 @@ public class Task {
         this.description = description;
     }
 
+    /**
+     * @return description
+     */
     public String getDescription() {
         return this.description;
     }
