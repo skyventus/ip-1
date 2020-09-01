@@ -8,9 +8,6 @@ public abstract class Task {
         this.description = description;
     }
 
-    /**
-     * @return description
-     */
     public String getDescription() {
         return this.description;
     }
