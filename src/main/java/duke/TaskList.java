@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 import utils.Parser;
 import utils.Ui;

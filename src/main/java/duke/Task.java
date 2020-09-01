@@ -1,8 +1,8 @@
-package Duke;
+package duke;
 
 public abstract class Task {
     private String description;
-    private boolean isDone;
+//    private boolean isDone;
 
     public Task(String description) {
         this.description = description;
@@ -20,12 +20,8 @@ public abstract class Task {
         return description;
     }
 
-    public boolean isDone() {
-        return isDone;
-    }
+    public abstract boolean isDone();
 
-    public void setDone(boolean done) {
-        this.isDone = done;
-    }
+    public abstract void setDone(boolean done);
 
 }

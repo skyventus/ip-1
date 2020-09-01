@@ -1,4 +1,4 @@
-package Duke;
+package duke;
 
 import utils.Ui;
 import utils.Parser;
@@ -26,7 +26,7 @@ public class Duke {
                         task.setTaskDone(Parser.getTaskIndex(fullCommand));
                         break;
                     case("todo"):
-                        task.addTask(Parser.createTask(Parser.getTodoDescription(fullCommand,commandWord)));
+                        task.addTask(Parser.createTodo(Parser.getTodoDescription(fullCommand,commandWord)));
                         break;
                     case("deadline"):
                         task.addTask(Parser.createDeadline(Parser.getDescriptionOnly(fullCommand,commandWord, "/by")

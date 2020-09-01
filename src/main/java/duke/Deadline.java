@@ -1,6 +1,6 @@
-package Duke;
+package duke;
 
-public class Deadline extends Task{
+public class Deadline extends Todo{
     private String deadline;
 
     public Deadline(String description, String deadline) {
