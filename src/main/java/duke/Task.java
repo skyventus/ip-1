@@ -16,7 +16,7 @@ public abstract class Task {
     public String toString() {
         return description;
     }
-
+    //abstract function
     public abstract boolean isDone();
 
     public abstract void setDone(boolean done);
