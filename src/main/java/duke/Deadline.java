@@ -1,5 +1,10 @@
 package main.java.duke;
 
+/**
+ * Deadline is a class that extends Todo
+ * As Deadline consist of deadline information in this class.
+ * @author olivier cheah
+ */
 public class Deadline extends Todo{
     private String deadline;
 

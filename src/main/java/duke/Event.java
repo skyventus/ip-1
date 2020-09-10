@@ -1,5 +1,11 @@
 package main.java.duke;
 
+/**
+ * Event is a class that extends Todo
+ * As Event consist of event information in this class.
+ * @author olivier cheah
+ */
+
 public class Event extends Todo {
     private String eventInformation;
 

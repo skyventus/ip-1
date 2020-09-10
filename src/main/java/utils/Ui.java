@@ -2,6 +2,10 @@ package main.java.utils;
 
 import java.util.Scanner;
 
+/**
+ * UI is a class that create a scanner also showing general message all in one place.
+ * @author olivier cheah
+ */
 
 public class Ui {
 

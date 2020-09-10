@@ -6,6 +6,10 @@ import main.java.duke.Event;
 import main.java.duke.Task;
 import main.java.duke.Todo;
 
+/**
+ * Parser is a class that help to parser needed information into program friendly terms
+ * @author olivier cheah
+ */
 public class Parser {
 
     public static String getCommandWord(String fullCommand) {

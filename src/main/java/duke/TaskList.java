@@ -6,6 +6,10 @@ import main.java.utils.Ui;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * TaskList is a class that hold a list of tasks and its related function.
+ * @author Olivier Cheah
+ */
 public class TaskList {
     private List<Task> tasks;
     Ui ui = new Ui();
