@@ -19,7 +19,7 @@ public abstract class Task {
 
     //Abstract methods
     public abstract boolean isDone();
-
+    public abstract String saveTask();
     public abstract void setDone(boolean done);
 
 }

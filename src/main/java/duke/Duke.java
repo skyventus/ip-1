@@ -1,5 +1,6 @@
 package main.java.duke;
 
+import main.java.utils.Storage;
 import main.java.utils.Ui;
 import main.java.utils.Parser;
 
@@ -7,10 +8,11 @@ public class Duke {
 
     private Ui ui;
     private TaskList task;
-
+    private Storage storage = new Storage("data","Duke.txt");
     public void run(){
         ui = new Ui();
         task = new TaskList();
+
         ui.printWelcome();
 
         String fullCommand = ui.readUserCommand().toLowerCase();
@@ -38,6 +40,9 @@ public class Duke {
                         break;
                     case("delete"):
                         task.removeTask(Parser.getDeleteIndex(fullCommand));
+                        break;
+                    case("save"):
+                        storage.save(task);
                         break;
                     default:
                         Ui.showToUser("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
