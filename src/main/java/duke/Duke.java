@@ -1,7 +1,7 @@
-package duke;
+package main.java.duke;
 
-import utils.Ui;
-import utils.Parser;
+import main.java.utils.Ui;
+import main.java.utils.Parser;
 
 public class Duke {
 
@@ -35,6 +35,9 @@ public class Duke {
                     case("event"):
                         task.addTask(Parser.createEvent(Parser.getDescriptionOnly(fullCommand,commandWord, "/at")
                                 ,Parser.getEventTiming(fullCommand)));
+                        break;
+                    case("delete"):
+                        task.removeTask(Parser.getDeleteIndex(fullCommand));
                         break;
                     default:
                         Ui.showToUser("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");

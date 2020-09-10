@@ -1,4 +1,4 @@
-package utils;
+package main.java.utils;
 
 import java.util.Scanner;
 
@@ -57,5 +57,13 @@ public class Ui {
 
     public void showByeMessage() {
         System.out.println(indent+ "Bye. Hope to see you again");
+    }
+
+    public void showDeleteMessage(){
+        System.out.println(indent + "Noted. I've removed this task: ");
+    }
+
+    public void showDeleteTaskDetails(String classType, String description, boolean isDone){
+        System.out.println(indent + "  ["+classType+"][" + (isDone ? checkedMark : cross)  + "] " +  description);
     }
 }

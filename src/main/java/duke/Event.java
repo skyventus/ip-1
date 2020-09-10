@@ -1,4 +1,4 @@
-package duke;
+package main.java.duke;
 
 public class Event extends Todo {
     private String eventInformation;
