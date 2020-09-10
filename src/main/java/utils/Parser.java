@@ -1,10 +1,10 @@
-package utils;
+package main.java.utils;
 
-import duke.Deadline;
-import duke.DukeException;
-import duke.Event;
-import duke.Task;
-import duke.Todo;
+import main.java.duke.Deadline;
+import main.java.duke.DukeException;
+import main.java.duke.Event;
+import main.java.duke.Task;
+import main.java.duke.Todo;
 
 public class Parser {
 
@@ -95,6 +95,12 @@ public class Parser {
         return idx;
     }
 
+    public static int getDeleteIndex(String fullCommand) {
+        int idx = Integer.parseInt(fullCommand.replace("delete", "")
+                .trim());
+
+        return idx;
+    }
     public static String getTaskType(Task task) {
         if (task instanceof Deadline)
             return "D";

@@ -1,7 +1,7 @@
-package duke;
+package main.java.duke;
 
-import utils.Parser;
-import utils.Ui;
+import main.java.utils.Parser;
+import main.java.utils.Ui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class TaskList {
     public void addTask(Task task) {
         tasks.add(task);
         ui.printGotIt();
-        ui.showAddedTask(Parser.getTaskType(task), task.getDescription());
+        ui.showAddedTask(Parser.getTaskType(task), task.toString());
         ui.showTotalNumberTaskAdded(tasks.size());
     }
 
@@ -40,6 +40,17 @@ public class TaskList {
             tasks.get(idx - 1).setDone(true);
             ui.showDoneTask(Parser.getTaskType(tasks.get(idx - 1)), tasks.get(idx - 1).toString());
         } catch (IndexOutOfBoundsException e) {
+            throw new DukeException("[ERROR] No task found for the number you want to set done");
+        }
+    }
+
+    public void removeTask(int idx) throws DukeException{
+        try{
+            ui.showDeleteMessage();
+            ui.showDeleteTaskDetails(Parser.getTaskType(tasks.get(idx - 1)), tasks.get(idx - 1).toString(), tasks.get(idx - 1).isDone());
+            tasks.remove(idx - 1);
+            ui.showTotalNumberTaskAdded(tasks.size());
+        }catch (IndexOutOfBoundsException e){
             throw new DukeException("[ERROR] No task found for the number you want to set done");
         }
     }
