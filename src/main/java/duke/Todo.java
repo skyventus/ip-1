@@ -1,5 +1,9 @@
 package main.java.duke;
 
+/**
+ * Todo is a class that extends to task. As it contains the status of the tasks.
+ * @author Olivier Cheah
+ */
 public class Todo extends Task {
     boolean taskStatus;
 

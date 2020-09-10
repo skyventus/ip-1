@@ -1,5 +1,10 @@
 package main.java.duke;
 
+/**
+ * Task is the based class for this Duke and is a abstract class.
+ * @author Olivier Cheah
+ */
+
 public abstract class Task {
     private String description;
 //    private boolean isDone;
