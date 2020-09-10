@@ -13,6 +13,12 @@ public class Todo extends Task {
     }
 
     @Override
+    public String saveTask(){
+        return "T | " + (taskStatus ? "1" : "0")+ " | " + super.getDescription() + "\n";
+    }
+
+
+    @Override
     public void setDone(boolean done) {
         this.taskStatus=done;
     }

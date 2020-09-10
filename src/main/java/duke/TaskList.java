@@ -54,4 +54,20 @@ public class TaskList {
             throw new DukeException("[ERROR] No task found for the number you want to set done");
         }
     }
+
+    public boolean isEmpty() {
+        boolean isEmpty = tasks.isEmpty();
+        return isEmpty;
+    }
+
+    public int getSize(){
+        return tasks.size();
+    }
+
+    public String saveTask(int idx){
+        String value = tasks.get(idx).saveTask();
+        //System.out.println(value);
+        return value;
+    }
+
 }

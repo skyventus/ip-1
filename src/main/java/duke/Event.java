@@ -13,4 +13,8 @@ public class Event extends Todo {
         return super.toString() + " (at: " + eventInformation + ")";
     }
 
+    @Override
+    public String saveTask(){
+        return "E | " + (super.isDone() ? "1" : "0") + " | " + super.getDescription() + " | " + eventInformation + "\n";
+    }
 }

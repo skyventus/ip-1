@@ -60,10 +60,14 @@ public class Ui {
     }
 
     public void showDeleteMessage(){
-        System.out.println(indent + "Noted. I've removed this task: ");
+            System.out.println(indent + "Noted. I've removed this task: ");
     }
 
     public void showDeleteTaskDetails(String classType, String description, boolean isDone){
         System.out.println(indent + "  ["+classType+"][" + (isDone ? checkedMark : cross)  + "] " +  description);
+    }
+
+    public void showFileSavedMessage() {
+        System.out.println(indent + "Your file has been saved to data/Duke.txt directory");
     }
 }
