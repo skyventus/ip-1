@@ -17,9 +17,7 @@ public class Storage {
     public Storage(String filePath, String filename){
         this.filePath = filePath;
         this.filename = filename;
-        System.out.println(filePath);
         File directory = new File(filePath);
-        System.out.println(directory.exists());
         if(! directory.exists()) {
             directory.mkdir();
             System.out.println(directory.exists());
