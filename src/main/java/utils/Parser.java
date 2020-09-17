@@ -60,7 +60,7 @@ public class Parser {
 
     public static String getTodoDescription(String fullCommand, String commandWord) throws DukeException {
 
-        String description = fullCommand.replace(commandWord, "");
+        String description = fullCommand.replace(commandWord, "").trim();
         if (description.isEmpty()) {
             throw new DukeException("☹ OOPS!!! The description of a todo cannot be empty.");
         }

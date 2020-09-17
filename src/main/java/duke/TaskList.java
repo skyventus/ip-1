@@ -51,6 +51,10 @@ public class TaskList {
         }
     }
 
+    public boolean isTaskCompleted(int idx){
+        return tasks.get(idx - 1).isDone();
+    }
+
     public void setTaskDoneSliently(int idx) throws DukeException {
         try {
             ui.printDone();
