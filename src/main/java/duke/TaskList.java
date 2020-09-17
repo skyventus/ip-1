@@ -25,6 +25,9 @@ public class TaskList {
         ui.showTotalNumberTaskAdded(tasks.size());
     }
 
+    public void addTaskWithoutMessage(Task task) {
+        tasks.add(task);
+    }
     public void printTasks() {
         //to keep track of item starting from 1
         int itemRank = 1;
@@ -48,6 +51,14 @@ public class TaskList {
         }
     }
 
+    public void setTaskDoneSliently(int idx) throws DukeException {
+        try {
+            ui.printDone();
+            tasks.get(idx - 1).setDone(true);
+        } catch (IndexOutOfBoundsException e) {
+            throw new DukeException("[ERROR] No task found for the number you want to set done");
+        }
+    }
     public void removeTask(int idx) throws DukeException{
         try{
             ui.showDeleteMessage();

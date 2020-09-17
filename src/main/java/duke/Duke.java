@@ -4,14 +4,29 @@ import main.java.utils.Storage;
 import main.java.utils.Ui;
 import main.java.utils.Parser;
 
+import java.io.IOException;
+
 public class Duke {
 
     private Ui ui;
     private TaskList task;
-    private Storage storage = new Storage("data","Duke.txt");
+    private Storage storage;
+
+    public Duke (String filePath){
+
+        storage  = new Storage("filePath","Duke.txt");
+        try {
+            task=storage.load(filePath);
+            Ui.showToUser("---Total number of task loaded: " + task.getSize());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DukeException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void run(){
         ui = new Ui();
-        task = new TaskList();
 
         ui.printWelcome();
 
@@ -59,6 +74,6 @@ public class Duke {
 
     }
     public static void main(String[] args) {
-        new Duke().run();
+        new Duke("data/Duke.txt").run();
     }
 }
