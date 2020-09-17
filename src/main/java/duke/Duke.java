@@ -59,6 +59,9 @@ public class Duke {
                     case("save"):
                         storage.save(task);
                         break;
+                    case("find"):
+                        task.findTask(Parser.getItemToFind(fullCommand,commandWord));
+                        break;
                     default:
                         Ui.showToUser("☹ OOPS!!! I'm sorry, but I don't know what that means :-(");
                         break;

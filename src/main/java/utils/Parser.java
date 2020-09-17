@@ -114,4 +114,23 @@ public class Parser {
             return "T";
     }
 
+    public static String getItemToFind(String fullCommand, String commandWord) throws DukeException {
+
+        String getItemToFind = fullCommand.replace(commandWord, "").trim();
+        if (getItemToFind.isEmpty()) {
+            throw new DukeException("☹ OOPS!!! The description of a todo cannot be empty.");
+        }
+        return getItemToFind;
+    }
+
+    public static boolean findMatchKeywords(String description, String keyword){
+        String[] splitDescription;
+        splitDescription = description.split(" ");
+
+        for (String word: splitDescription) {
+            if(word.equalsIgnoreCase(keyword))
+                return true;
+        }
+        return false;
+    }
 }

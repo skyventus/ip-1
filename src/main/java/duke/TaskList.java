@@ -85,4 +85,20 @@ public class TaskList {
         return value;
     }
 
+    public void findTask(String keyword){
+        int itemRank = 1;
+
+        if (tasks.isEmpty())
+            ui.showToUser("No tasks has been added to the list yet.");
+
+        for (Task task : tasks) {
+            if(Parser.findMatchKeywords(task.getDescription().trim(), keyword)) {
+                ui.showTaskWithOrder(Parser.getTaskType(task), task.toString(), itemRank, task.isDone());
+                itemRank++;
+            }
+        }
+        if(itemRank == 1){
+            ui.showToUser("No item matched in the list.");
+        }
+    }
 }
