@@ -14,7 +14,7 @@ public class Duke {
 
     public Duke (String filePath){
 
-        storage  = new Storage("filePath","Duke.txt");
+        storage  = new Storage("Data","Duke.txt");
         try {
             task=storage.load(filePath);
             Ui.showToUser("---Total number of task loaded: " + task.getSize());
