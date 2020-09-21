@@ -20,13 +20,13 @@ if you like.
 ##### Create / Delete Tasks
 You can create the task in the form of (Todo/Deadline/Event). 
 
-######Todo
+###### Todo
 Contains the description of your tasks and the status of the task.
 
-######Deadline
+###### Deadline
 Contains everything that Todo has with a deadline to the tasks.
 
-######Event
+###### Event
 Contains everything that todo has with a time period to the tasks. 
 
 ## Available Keywords
